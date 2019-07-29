@@ -1,50 +1,12 @@
-from random import *
+import json
+import requests
 
-f = open("input.txt", "r")
-
-words = {}
-
-prevWord = "."
-for line in f:
-  for word in line.split():
-    if word.endswith("."):
-      word = word[:-1]
-      if word in words:
-        words[prevWord].append(word)
-        prevWord = "."
-      else:
-        words[prevWord] = [word]
-        prevWord = word
-    elif prevWord in words:
-      words[prevWord].append(word)
-      prevWord = word
-    else:
-      words[prevWord] = [word]
-      prevWord = word
-    print(word)
-
-print(words)
+query = raw_input("Search: ")
+apikey = "4fb83061-a516-42d4-ab2f-b35b8f73af2b"
+url = "https://dictionaryapi.com/api/v3/references/collegiate/json/"+query+"?key="+apikey
 
 
-text = [line.split() for line in open("input.txt")]
-wordsArray = text[0]
 
-wordBefore = wordsArray[randint(0,len(wordsArray)-1)]
+r = requests.get(url)
 
-sentence = wordBefore
-
-# print("First Word:", wordBefore)
-print("\n")
-
-for key in words:
-  if len(sentence) < 140:
-    if wordBefore in words:
-      values = words[wordBefore]
-      nextWord = values[randint(0,len(values)-1)]
-      sentence += " " + nextWord
-      wordBefore = nextWord
-    else:
-      wordBefore = "."
-
-print("Sentence:",sentence)
-print(len(sentence))
+print(r.text)

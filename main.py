@@ -9,10 +9,10 @@ window.title("Phrog")
 window.geometry("1440x900")
 window.configure(background='grey')
 
-path = "SLAB.png"
-path2 = "GGB.png"
-path3 = "PHROG.png"
-path4 = "space.png"
+path = "Images/SLAB.png"
+path2 = "Images/GGB.png"
+path3 = "Images/PHROG.png"
+path4 = "Images/space.png"
 picList = [path,path2,path3,path4]
 #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
 index = (randint(0, len(picList)-1))

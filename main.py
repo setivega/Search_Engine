@@ -12,7 +12,8 @@ window.configure(background='grey')
 path = "SLAB.png"
 path2 = "GGB.png"
 path3 = "PHROG.png"
-picList = [path,path2,path3]
+path4 = "space.png"
+picList = [path,path2,path3,path4]
 #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
 index = (randint(0, len(picList)-1))
 img = ImageTk.PhotoImage(Image.open(picList[index]))
@@ -25,15 +26,3 @@ panel.pack(side = "bottom", fill = "both", expand = "yes")
 
 #Start the GUI
 window.mainloop()
-
-# theLabel.mainloop()
-# def setup():
-#     global picList,img,img2,img3,index,user,onScreen,keyboard,j
-#     size(1440,900)
-#     img = loadImage("SLAB.jpg")
-#     img2 = loadImage("GGB.jpg")
-#     img3 = loadImage("PHROG.jpg")
-#     user = " "
-#     picList = [img, img2, img3]
-#     index = int(randint(0, len(picList)-1))
-#     background(picList[index])

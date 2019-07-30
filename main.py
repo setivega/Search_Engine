@@ -1,18 +1,27 @@
-from tkinter import*
 import tkinter as tk
-from random import *
-from tkinter import messagebox
-from os import *
-from PIL import Image
-window = Tk()
-window.title("PHROG")
-window.geometry("1440x900")
-window.configure(background = 'grey')
+from tkinter import *
+from PIL import ImageTk, Image
 
-path ="SLAB.png"
-img = PhotoImage(Image.open(path))
-panel = Label(window, image = img)
+#This creates the main window of an application
+window = tk.Tk()
+window.title("Phrog")
+window.geometry("1440x900")
+window.configure(background='grey')
+
+path = "Super.png"
+
+#Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
+img = ImageTk.PhotoImage(Image.open(path))
+
+#The Label widget is a standard Tkinter widget used to display a text or image on the screen.
+panel = tk.Label(window, image = img)
+
+#The Pack geometry manager packs widgets in rows or columns.
+panel.pack(side = "bottom", fill = "both", expand = "yes")
+
+#Start the GUI
 window.mainloop()
+
 # theLabel.mainloop()
 # def setup():
 #     global picList,img,img2,img3,index,user,onScreen,keyboard,j

@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
+from random import *
 
 #This creates the main window of an application
 window = tk.Tk()
@@ -8,10 +9,13 @@ window.title("Phrog")
 window.geometry("1440x900")
 window.configure(background='grey')
 
-path = "Super.png"
-
+path = "SLAB.png"
+path2 = "GGB.png"
+path3 = "PHROG.png"
+picList = [path,path2,path3]
 #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
-img = ImageTk.PhotoImage(Image.open(path))
+index = (randint(0, len(picList)-1))
+img = ImageTk.PhotoImage(Image.open(picList[index]))
 
 #The Label widget is a standard Tkinter widget used to display a text or image on the screen.
 panel = tk.Label(window, image = img)

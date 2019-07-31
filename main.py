@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
 from random import *
+import sys
+import os
 
 #This creates the main window of an application
 window = tk.Tk()
@@ -23,6 +25,12 @@ panel = tk.Label(window, image = img)
 
 #The Pack geometry manager packs widgets in rows or columns.
 panel.pack(side = "bottom", fill = "both", expand = "yes")
+
+def runSearch():
+    os.system('python3 news_search.py')
+
+search=tk.Button(window,text="hello",command= runSearch)
+search.place(x=10, y=10)
 
 #Start the GUI
 window.mainloop()

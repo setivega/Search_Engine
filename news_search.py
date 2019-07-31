@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
 
-query = 'how to put music in'
+query = 'gosh'
 apiKey = '5ed40e8e488f4b26a289403dd6c181ef'
 mainApi = 'https://newsapi.org/v2/everything?'
 
@@ -35,11 +35,12 @@ def createArticles():
     yCoord = 200
     for article in news:
         titleLabel = Label(window, text = article['title'])
-        titleLabel.place(x = 20,y = yCoord)
+        titleLabel.place(x = 200,y = yCoord)
         nameLabel = Label(window, text = article['name'])
-        nameLabel.place(x = 20,y = yCoord+50)
+        nameLabel.place(x = 200,y = yCoord+50)
         descriptionLabel = Label(window, text = article['description'])
-        descriptionLabel.place(x = 20,y = yCoord+100)
+        # descriptionLabel.config(width = 1400)
+        descriptionLabel.place(x = 200,y = yCoord+100)
         yCoord+= 200
 
 #This creates the main window of an application

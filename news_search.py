@@ -7,6 +7,8 @@ from main import backgroundWindow
 
 window = Tk()
 
+window = Tk()
+button = tk.Button(window, text='Search', width=25)
 entry = Entry(window)
 entry.place(x=200,y=30)
 content = entry.get()
@@ -54,12 +56,8 @@ def createArticles():
 
 #This creates the main window of an application
 window = Tk()
-pic = backgroundWindow()
 window.title("Phrog")
 window.geometry("1440x900")
-window.configure(background= pic)
-t = Text()
-t.config(wrap = WORD)
 
 logoPath = "Images/logo.png"
 

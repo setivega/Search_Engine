@@ -60,10 +60,10 @@ logoPath = "Images/logo.png"
 logo = ImageTk.PhotoImage(Image.open(logoPath))
 
 
-Label_1 = Label(window, text="Search Bar ")
-entry_1 = Entry(window)
-Label_1.place(x=720, y=150)
-entry_1.place(x=720, y=150)
+# Label_1 = Label(window, text="Search Bar ")
+# entry_1 = Entry(window)
+# Label_1.place(x=720, y=150)
+# entry_1.place(x=720, y=150)
 
 # panel = Label(window, image = logo)
 # panel.place(x=20,y=30)

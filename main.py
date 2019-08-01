@@ -4,6 +4,8 @@ from PIL import ImageTk, Image
 from random import *
 import sys
 import os
+from news_search import getData
+
 
 window = tk.Tk()
 window.title("Phrog")
@@ -31,10 +33,17 @@ logo.place(x=502,y=104)
 #The Pack geometry manager packs widgets in rows or columns.
 panel.pack(side = "bottom", fill = "both", expand = "yes")
 
+entry = Entry(window)
+entry.place(x=600,y=450)
+
 def runSearch():
+    global entry
+    query = entry.get()
+    getData(query)
     os.system('python3 news_search.py')
 
-search=tk.Button(window,text="Search",command= runSearch)
+
+search=tk.Button(window,text="Search",command=runSearch)
 search.place(x=770, y=450)
 
 #Start the GUI

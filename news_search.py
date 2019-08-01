@@ -3,23 +3,13 @@ import urllib.parse
 import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
-from main import backgroundWindow
-
-window = Tk()
-
-window = Tk()
-button = tk.Button(window, text='Search', width=25)
-entry = Entry(window)
-entry.place(x=200,y=30)
-content = entry.get()
-
-query = content
 
 news = []
 
 def getData(query):
     global news
 
+    print("Query: ",query)
     apiKey = '5ed40e8e488f4b26a289403dd6c181ef'
     mainApi = 'https://newsapi.org/v2/everything?'
 
@@ -43,28 +33,46 @@ def getData(query):
     print(news)
 
 def createArticles():
-    global news, content,entry_1
+    global news
+
     yCoord = 200
     for article in news:
-        titleLabel = Label(window, text = article['title'])
+        titleLabel = Label(window, text = article['title'], fg = 'blue', font = (None,20))
         titleLabel.place(x = 200,y = yCoord)
-        nameLabel = Label(window, text = article['name'])
-        nameLabel.place(x = 200,y = yCoord+50)
-        descriptionLabel = Label(window, text = article['description'])
-        descriptionLabel.place(x = 200,y = yCoord+100)
-        yCoord+= 200
+        nameLabel = Label(window, text = article['name'],  fg = 'green', font = (None,15))
+        nameLabel.place(x = 200,y = yCoord+30)
+        descriptionLabel = Label(window, text = article['description'], wraplength = 600, justify=LEFT)
+        descriptionLabel.place(x = 200,y = yCoord+60)
+        yCoord+= 150
+    print("Doinkers")
 
 #This creates the main window of an application
-window = Tk()
-window.title("Phrog")
-window.geometry("1440x900")
 
-logoPath = "Images/logo.png"
+# def searchNews(query):
+#     getData(query)
+#     createArticles()
 
-logo = ImageTk.PhotoImage(Image.open(logoPath))
+if __name__== "__main__":
 
-searchBar = Entry(window)
+    print('news search running')
 
-createArticles()
+    window = Tk()
 
-window.mainloop()
+    entry = Entry(window)
+    entry.place(x=200,y=30)
+
+    newQuery = entry.get()
+
+    window.title("Phrog")
+    window.geometry("1440x900")
+
+    path = "Images/logo.png"
+    img = ImageTk.PhotoImage(Image.open(path))
+    logo = Label(window, image = img)
+    logo.place(x=10,y=30)
+
+    # searchNews(newQuery)
+    getData(newQuery)
+    createArticles()
+
+    window.mainloop()

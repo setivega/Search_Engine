@@ -46,5 +46,9 @@ def runSearch():
     window1.mainloop()
     # os.system('python3 news_search.py soccer')
 
+
+search=tk.Button(window,text="Search",command=runSearch)
+search.place(x=770, y=450)
+
 #Start the GUI
 window.mainloop()

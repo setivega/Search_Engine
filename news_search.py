@@ -3,13 +3,14 @@ import urllib.parse
 import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
+import os
 
 news = []
 
 def hit():
+    global query
     os.system('python3 news_search.py')
-    button=Button(window,text="Search",command= hit)
-    button.place(x=220,y=35)
+    getData(query)
 
 
 def getData(query):

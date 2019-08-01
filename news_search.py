@@ -54,13 +54,14 @@ def createArticles(window):
 
 #This creates the main window of an application
 
-def createWindow():
+# def searchNews():
+#     global newQuery
+#
+#     getData(newQuery)
+#     createArticles()
 
-        # def searchNews():
-        #     global newQuery
-        #
-        #     getData(newQuery)
-        #     createArticles()
+
+def createWindow():
 
         window = Tk()
 
@@ -72,10 +73,10 @@ def createWindow():
         window.title("Phrog")
         window.geometry("1440x900")
 
-        path = "Images/logo.png"
-        img = ImageTk.PhotoImage(Image.open(path))
-        logo = Label(window, image = img)
-        logo.place(x=10,y=30)
+        # path = "Images/logo.png"
+        # img = ImageTk.PhotoImage(Image.open(path))
+        # logo = Label(window, image = img)
+        # logo.place(x=10,y=30)
 
 
         # createArticles()

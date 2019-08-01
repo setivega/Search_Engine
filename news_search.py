@@ -3,13 +3,14 @@ import urllib.parse
 import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
+import os
 
 news = []
 
 def hit():
+    global query
     os.system('python3 news_search.py')
-    button=Button(window,text="Search",command= hit)
-    button.place(x=220,y=35)
+    getData(query)
 
 
 def getData(query):
@@ -54,13 +55,14 @@ def createArticles(window):
 
 #This creates the main window of an application
 
-def createWindow():
+# def searchNews():
+#     global newQuery
+#
+#     getData(newQuery)
+#     createArticles()
 
-        # def searchNews():
-        #     global newQuery
-        #
-        #     getData(newQuery)
-        #     createArticles()
+
+def createWindow():
 
         window = Tk()
 
@@ -72,10 +74,10 @@ def createWindow():
         window.title("Phrog")
         window.geometry("1440x900")
 
-        path = "Images/logo.png"
-        img = ImageTk.PhotoImage(Image.open(path))
-        logo = Label(window, image = img)
-        logo.place(x=10,y=30)
+        # path = "Images/logo.png"
+        # img = ImageTk.PhotoImage(Image.open(path))
+        # logo = Label(window, image = img)
+        # logo.place(x=10,y=30)
 
 
         # createArticles()

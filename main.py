@@ -4,7 +4,7 @@ from PIL import ImageTk, Image
 from random import *
 import sys
 import os
-from news_search import getData
+from news_search import getData, createArticles
 
 
 window = tk.Tk()
@@ -40,6 +40,7 @@ def runSearch():
     global entry
     query = entry.get()
     getData(query)
+    createArticles()
     os.system('python3 news_search.py')
 
 

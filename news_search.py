@@ -3,13 +3,15 @@ import urllib.parse
 import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
+import os
 
 news = []
 
 def hit():
+    global query
     os.system('python3 news_search.py')
-    button=tk.Button(window,text="Search",command= hit)
-    button.place(x=220,y=35)
+    getData(query)
+
 
 
 def getData(query):
@@ -66,6 +68,8 @@ if __name__== "__main__":
 
     entry = Entry(window)
     entry.place(x=200,y=30)
+    button=Button(window,text="Search",command= hit)
+    button.place(x=220,y=35)
 
     newQuery = entry.get()
 
@@ -76,6 +80,9 @@ if __name__== "__main__":
     img = ImageTk.PhotoImage(Image.open(path))
     logo = Label(window, image = img)
     logo.place(x=10,y=30)
+
+
+    button.pack()
 
     createArticles()
 

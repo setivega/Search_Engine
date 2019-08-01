@@ -6,7 +6,9 @@ from PIL import ImageTk, Image
 
 
 window = Tk()
-button = tk.Button(window, text='Search', width=25)
+button = Button(window, text="Search")
+button.place(x=220,y=320)
+button.pack()
 entry = Entry(window)
 entry.place(x=200,y=30)
 content = entry.get()
@@ -14,6 +16,12 @@ content = entry.get()
 query = content
 
 news = []
+
+def hit():
+    os.system('python3 news_search.py')
+    button=tk.Button(window,text="Search",command= hit)
+    button.place(x=220,y=35)
+
 
 def getData(query):
     global news

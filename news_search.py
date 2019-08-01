@@ -4,36 +4,46 @@ import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
 
-query = 'frank'
+window = Tk()
+
+entry = Entry(window)
+entry.place(x=200,y=30)
+content = entry.get()
+
+query = content
 apiKey = '5ed40e8e488f4b26a289403dd6c181ef'
 mainApi = 'https://newsapi.org/v2/everything?'
-
-params = {'q': query, 'apiKey': apiKey}
-url = mainApi + urllib.parse.urlencode(params)
-
-data = requests.get(url).json()
-
-articles = data['articles']
 
 news = []
 
 
-for article in articles:
-    newsArticle = {}
-    newsArticle['name'] = article['source']['name']
-    newsArticle['title'] = article['title']
-    newsArticle['description'] = article['description']
-    newsArticle['url'] = article['url']
-    newsArticle['image'] = article['urlToImage']
+def getData():
+    global news
 
-    news.append(newsArticle)
+    params = {'q': query, 'apiKey': apiKey}
+    url = mainApi + urllib.parse.urlencode(params)
 
-print(news)
+    data = requests.get(url).json()
+
+    articles = data['articles']
+
+    for article in articles:
+        newsArticle = {}
+        newsArticle['name'] = article['source']['name']
+        newsArticle['title'] = article['title']
+        newsArticle['description'] = article['description']
+        newsArticle['url'] = article['url']
+        newsArticle['image'] = article['urlToImage']
+
+        news.append(newsArticle)
+
+        print(news)
 
 def callback(url):
     webbrowser.open_new(url)
 
 # def navBar():
+
 
 
 def createArticles():
@@ -51,7 +61,7 @@ def createArticles():
         yCoord+= 150
 
 #This creates the main window of an application
-window = Tk()
+
 window.title("Phrog")
 window.geometry("1440x900")
 window.configure(background='white')
@@ -66,7 +76,6 @@ panel = Label(window, image = logo)
 panel.place(x=20,y=30)
 # panel.pack(side="top", fill='both', expand=True, padx=4, pady=4)
 
-searchBar = Entry(window)
 
 createArticles()
 

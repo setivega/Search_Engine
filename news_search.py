@@ -13,7 +13,6 @@ def hit():
     getData(query)
 
 
-
 def getData(query):
     global news
 
@@ -40,7 +39,7 @@ def getData(query):
 
     print(news)
 
-def createArticles():
+def createArticles(window):
     global news
 
     yCoord = 200
@@ -52,38 +51,39 @@ def createArticles():
         descriptionLabel = Label(window, text = article['description'], wraplength = 600, justify=LEFT)
         descriptionLabel.place(x = 200,y = yCoord+60)
         yCoord+= 150
-    print("Doinkers")
+    print("Articles Creating")
 
 #This creates the main window of an application
 
-# def searchNews(query):
-#     getData(query)
-#     createArticles()
+def createWindow():
+
+        # def searchNews():
+        #     global newQuery
+        #
+        #     getData(newQuery)
+        #     createArticles()
+
+        window = Tk()
+
+        entry = Entry(window)
+        entry.place(x=200,y=30)
+
+        newQuery = entry.get()
+
+        window.title("Phrog")
+        window.geometry("1440x900")
+
+        path = "Images/logo.png"
+        img = ImageTk.PhotoImage(Image.open(path))
+        logo = Label(window, image = img)
+        logo.place(x=10,y=30)
+
+
+        # createArticles()
+
+        return window
 
 if __name__== "__main__":
 
-    print('news search running')
-
-    window = Tk()
-
-    entry = Entry(window)
-    entry.place(x=200,y=30)
-    button=Button(window,text="Search",command= hit)
-    button.place(x=220,y=35)
-
-    newQuery = entry.get()
-
-    window.title("Phrog")
-    window.geometry("1440x900")
-
-    path = "Images/logo.png"
-    img = ImageTk.PhotoImage(Image.open(path))
-    logo = Label(window, image = img)
-    logo.place(x=10,y=30)
-
-
-    button.pack()
-
-    createArticles()
-
+    window = createWindow()
     window.mainloop()

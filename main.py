@@ -4,7 +4,7 @@ from PIL import ImageTk, Image
 from random import *
 import sys
 import os
-from news_search import getData, createArticles
+from news_search import getData, createArticles, createWindow
 
 
 window = tk.Tk()
@@ -38,10 +38,13 @@ entry.place(x=600,y=450)
 
 def runSearch():
     global entry
+
     query = entry.get()
     getData(query)
-    createArticles()
-    os.system('python3 news_search.py')
+    window1 = createWindow()
+    createArticles(window1)
+    window1.mainloop()
+    # os.system('python3 news_search.py soccer')
 
 
 search=tk.Button(window,text="Search",command=runSearch)

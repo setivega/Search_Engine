@@ -5,6 +5,7 @@ from tkinter import *
 from PIL import ImageTk, Image
 from main import backgroundWindow
 
+window = Tk()
 
 window = Tk()
 button = tk.Button(window, text='Search', width=25)
@@ -26,17 +27,6 @@ def getData(query):
     url = mainApi + urllib.parse.urlencode(params)
 
     data = requests.get(url).json()
-
-# puzzle = input(" ")
-# entry_1 = Entry("")
-# content = entry_1.get()
-query = 'bacon'
-apiKey = '5ed40e8e488f4b26a289403dd6c181ef'
-mainApi = 'https://newsapi.org/v2/everything?'
-
-params = {'q': query, 'apiKey': apiKey}
-url = mainApi + urllib.parse.urlencode(params)
-
 
 data = requests.get(url).json()
 

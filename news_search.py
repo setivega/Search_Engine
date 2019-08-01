@@ -3,7 +3,7 @@ import urllib.parse
 import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
-from main import backgroundWindow
+
 
 window = Tk()
 

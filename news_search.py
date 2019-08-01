@@ -26,24 +26,19 @@ def getData(query):
 
     data = requests.get(url).json()
 
-data = requests.get(url).json()
+    articles = data['articles']
 
-articles = data['articles']
+    for article in articles:
+        newsArticle = {}
+        newsArticle['name'] = article['source']['name']
+        newsArticle['title'] = article['title']
+        newsArticle['description'] = article['description']
+        newsArticle['url'] = article['url']
+        newsArticle['image'] = article['urlToImage']
 
-news = []
+        news.append(newsArticle)
 
-
-for article in articles:
-    newsArticle = {}
-    newsArticle['name'] = article['source']['name']
-    newsArticle['title'] = article['title']
-    newsArticle['description'] = article['description']
-    newsArticle['url'] = article['url']
-    newsArticle['image'] = article['urlToImage']
-
-    news.append(newsArticle)
-
-print(news)
+    print(news)
 
 def createArticles():
     global news, content,entry_1

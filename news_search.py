@@ -6,8 +6,6 @@ from PIL import ImageTk, Image
 
 
 window = Tk()
-
-window = Tk()
 button = tk.Button(window, text='Search', width=25)
 entry = Entry(window)
 entry.place(x=200,y=30)
@@ -55,15 +53,14 @@ def createArticles():
         yCoord+= 200
 
 #This creates the main window of an application
-window = Tk()
 window.title("Phrog")
 window.geometry("1440x900")
 
-logoPath = "Images/logo.png"
+path = "Images/logo.png"
 
-logo = ImageTk.PhotoImage(Image.open(logoPath))
-
-searchBar = Entry(window)
+img = ImageTk.PhotoImage(Image.open(path))
+logo = Label(window, image =img)
+logo.place(x=10,y=30)
 
 createArticles()
 

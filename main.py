@@ -6,10 +6,10 @@ import sys
 import os
 
 #This creates the main window of an application
-window = tk.Tk()
-window.title("Phrog")
-window.geometry("1440x900")
-window.configure(background='grey')
+# window = tk.Tk()
+# window.title("Phrog")
+# window.geometry("1440x900")
+# window.configure(background='grey')
 
 path = "Images/SLAB.png"
 path2 = "Images/GGB.png"

@@ -6,6 +6,7 @@ from PIL import ImageTk, Image
 import os
 
 news = []
+newQuery = ''
 
 def hit():
     global query
@@ -55,36 +56,40 @@ def createArticles(window):
 
 #This creates the main window of an application
 
-# def searchNews():
-#     global newQuery
-#
-#     getData(newQuery)
-#     createArticles()
+def searchNews():
+    global newQuery
 
+    getData(newQuery)
+    createArticles(window)
+
+def getQuery(window):
+
+    entry = Entry(window)
+    entry.place(x=200,y=30)
+    newQuery = entry.get()
+    return newQuery
 
 def createWindow():
 
-        window = Tk()
+    window = Tk()
 
-        entry = Entry(window)
-        entry.place(x=200,y=30)
+    getQuery(window)
+    # search = Button(window,text='Search',command=searchNews)
+    # search.place(x=400,y=30)
 
-        newQuery = entry.get()
+    window.title("Phrog")
+    window.geometry("1440x900")
 
-        window.title("Phrog")
-        window.geometry("1440x900")
+    # path = "Images/logo.png"
+    # img = ImageTk.PhotoImage(Image.open(path))
+    # logo = Label(window, image = img)
+    # logo.place(x=10,y=30)
 
-        # path = "Images/logo.png"
-        # img = ImageTk.PhotoImage(Image.open(path))
-        # logo = Label(window, image = img)
-        # logo.place(x=10,y=30)
-
-
-        # createArticles()
-
-        return window
+    return window
 
 if __name__== "__main__":
 
     window = createWindow()
+    search = Button(window,text='search',commna=searchNews)
+    search.place(x=400,y=30)
     window.mainloop()

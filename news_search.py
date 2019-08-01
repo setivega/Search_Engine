@@ -11,14 +11,14 @@ entry.place(x=200,y=30)
 content = entry.get()
 
 query = content
-apiKey = '5ed40e8e488f4b26a289403dd6c181ef'
-mainApi = 'https://newsapi.org/v2/everything?'
 
 news = []
 
-
-def getData():
+def getData(query):
     global news
+
+    apiKey = '5ed40e8e488f4b26a289403dd6c181ef'
+    mainApi = 'https://newsapi.org/v2/everything?'
 
     params = {'q': query, 'apiKey': apiKey}
     url = mainApi + urllib.parse.urlencode(params)

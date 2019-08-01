@@ -35,7 +35,7 @@ panel.pack(side = "bottom", fill = "both", expand = "yes")
 def runSearch():
     os.system('python3 news_search.py')
 
-search=tk.Button(window,text="hello",command= runSearch)
+search=tk.Button(window,text="Search",command= runSearch)
 search.place(x=10, y=10)
 
 #Start the GUI

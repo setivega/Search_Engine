@@ -6,6 +6,12 @@ from PIL import ImageTk, Image
 
 news = []
 
+def hit():
+    os.system('python3 news_search.py')
+    button=tk.Button(window,text="Search",command= hit)
+    button.place(x=220,y=35)
+
+
 def getData(query):
     global news
 

@@ -73,23 +73,16 @@ def createWindow():
 
     window = Tk()
 
-    getQuery(window)
-    # search = Button(window,text='Search',command=searchNews)
-    # search.place(x=400,y=30)
-
     window.title("Phrog")
     window.geometry("1440x900")
 
-    # path = "Images/logo.png"
-    # img = ImageTk.PhotoImage(Image.open(path))
-    # logo = Label(window, image = img)
-    # logo.place(x=10,y=30)
+    getQuery(window)
 
     return window
 
 if __name__== "__main__":
 
     window = createWindow()
-    search = Button(window,text='search',commna=searchNews)
+    search = Button(window,text='search',command=searchNews)
     search.place(x=400,y=30)
     window.mainloop()

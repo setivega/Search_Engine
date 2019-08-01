@@ -26,7 +26,7 @@ img2 = ImageTk.PhotoImage(Image.open(path5))
 #The Label widget is a standard Tkinter widget used to display a text or image on the screen.
 panel = tk.Label(window, image = img)
 logo = tk.Label(window, image = img2)
-logo.place(x=770,y=450)
+logo.place(x=502,y=104)
 
 #The Pack geometry manager packs widgets in rows or columns.
 panel.pack(side = "bottom", fill = "both", expand = "yes")

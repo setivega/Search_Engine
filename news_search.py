@@ -55,14 +55,13 @@ def createArticles(window):
 
 #This creates the main window of an application
 
-# def searchNews():
-#     global newQuery
-#
-#     getData(newQuery)
-#     createArticles()
-
-
 def createWindow():
+
+        # def searchNews():
+        #     global newQuery
+        #
+        #     getData(newQuery)
+        #     createArticles()
 
         window = Tk()
 
@@ -78,8 +77,7 @@ def createWindow():
         # img = ImageTk.PhotoImage(Image.open(path))
         # logo = Label(window, image = img)
         # logo.place(x=10,y=30)
-
-
+        scrollbar.config(command=text.yview)
         # createArticles()
 
         return window

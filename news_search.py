@@ -71,8 +71,6 @@ if __name__== "__main__":
     logo = Label(window, image = img)
     logo.place(x=10,y=30)
 
-    # searchNews(newQuery)
-    getData(newQuery)
     createArticles()
 
     window.mainloop()

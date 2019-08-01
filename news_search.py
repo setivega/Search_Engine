@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
 
-query = 'gosh'
+query = 'frank'
 apiKey = '5ed40e8e488f4b26a289403dd6c181ef'
 mainApi = 'https://newsapi.org/v2/everything?'
 
@@ -30,18 +30,25 @@ for article in articles:
 
 print(news)
 
+def callback(url):
+    webbrowser.open_new(url)
+
+# def navBar():
+
+
 def createArticles():
     global news
+
     yCoord = 200
     for article in news:
-        titleLabel = Label(window, text = article['title'])
+        titleLabel = Label(window, text = article['title'],fg = 'blue', font=(None, 17))
         titleLabel.place(x = 200,y = yCoord)
-        nameLabel = Label(window, text = article['name'])
-        nameLabel.place(x = 200,y = yCoord+50)
-        descriptionLabel = Label(window, text = article['description'])
-        # descriptionLabel.config(width = 1400)
-        descriptionLabel.place(x = 200,y = yCoord+100)
-        yCoord+= 200
+        nameLabel = Label(window, text = article['name'], fg='green', font=(None, 15))
+        nameLabel.bind("<Button-1>", lambda e: callback(article['url']))
+        nameLabel.place(x = 200,y = yCoord+30)
+        descriptionLabel = Label(window, text = article['description'], wraplength = 600, justify = LEFT, font = (None, 15))
+        descriptionLabel.place(x = 200,y = yCoord+60)
+        yCoord+= 150
 
 #This creates the main window of an application
 window = Tk()
@@ -59,9 +66,9 @@ panel = Label(window, image = logo)
 panel.place(x=20,y=30)
 # panel.pack(side="top", fill='both', expand=True, padx=4, pady=4)
 
-
 searchBar = Entry(window)
 
 createArticles()
+
 
 window.mainloop()

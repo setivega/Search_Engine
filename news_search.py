@@ -39,6 +39,7 @@ def getData(query):
         news.append(newsArticle)
 
     print(news)
+    print(len(news))
 
 def createArticles(window):
     global news
@@ -62,8 +63,7 @@ def searchNews():
     getData(newQuery)
     createArticles(window)
 
-
-
+    
 
 def createWindow():
 
@@ -75,6 +75,9 @@ def createWindow():
     listbox = Listbox(window, yscrollcommand = scroll.set)
 
     scroll.config(command = listbox.yview)
+
+    unlock=Button(window,text="$5.99 to scroll")
+    unlock.place(x=1200, y=25)
 
 
     window.title("Phrog")

@@ -17,7 +17,8 @@ path = "Images/SLAB.png"
 path2 = "Images/GGB.png"
 path3 = "Images/PHROG.png"
 path4 = "Images/space.png"
-picList = [path,path2,path3,path4]
+path6 = "Images/ERROR.png"
+picList = [path,path2,path3,path4,path6]
 
 path5 = "Images/logoBig.png"
 
@@ -45,6 +46,7 @@ def runSearch():
     window1 = createWindow()
     createArticles(window1)
     window1.mainloop()
+
     # os.system('python3 news_search.py soccer')
 
 

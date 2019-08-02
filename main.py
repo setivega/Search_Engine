@@ -48,7 +48,7 @@ def runSearch():
 
 
 search=tk.Button(window,text="Search",command=runSearch)
-search.place(x=770, y=450)
+search.place(x=800, y=455)
 
 #Start the GUI
 window.mainloop()

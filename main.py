@@ -18,13 +18,16 @@ path2 = "Images/GGB.png"
 path3 = "Images/PHROG.png"
 path4 = "Images/space.png"
 path6 = "Images/ERROR.png"
-picList = [path,path2,path3,path4,path6]
+path7 = "Images/DeepFried.png"
+path8 = "Images/gunga.png"
+picList = [path,path2,path3,path4,path6,path7]
 
 path5 = "Images/logoBig.png"
 
 #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
 index = (randint(0, len(picList)-1))
 img = ImageTk.PhotoImage(Image.open(picList[index]))
+
 img2 = ImageTk.PhotoImage(Image.open(path5))
 
 #The Label widget is a standard Tkinter widget used to display a text or image on the screen.

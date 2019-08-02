@@ -63,7 +63,7 @@ def searchNews():
     getData(newQuery)
     createArticles(window)
 
-    
+
 
 def createWindow():
 

@@ -6,6 +6,7 @@ import sys
 import os
 from news_search import getData, createArticles, createWindow
 
+#Hello world
 
 window = tk.Tk()
 window.title("Phrog")

@@ -43,7 +43,7 @@ def getData(query):
 def createArticles(window):
     global news
 
-    yCoord = 200
+    yCoord = 50
     for article in news:
         titleLabel = Label(window, text = article['title'], fg = 'blue', font = (None,20))
         titleLabel.place(x = 200,y = yCoord)
@@ -62,27 +62,32 @@ def searchNews():
     getData(newQuery)
     createArticles(window)
 
-def getQuery(window):
 
-    entry = Entry(window)
-    entry.place(x=200,y=30)
-    newQuery = entry.get()
-    return newQuery
+
 
 def createWindow():
 
-    window = Tk()
+    window = Toplevel()
+
+    scroll = Scrollbar(window)
+    scroll.pack(side=RIGHT, fill =Y)
+
+    listbox = Listbox(window, yscrollcommand = scroll.set)
+
+    scroll.config(command = listbox.yview)
+
 
     window.title("Phrog")
     window.geometry("1440x900")
 
-    getQuery(window)
 
     return window
 
 if __name__== "__main__":
 
     window = createWindow()
-    search = Button(window,text='search',command=searchNews)
-    search.place(x=400,y=30)
+    path = "Images/logoBig.png"
+    img3 = ImageTk.PhotoImage(Image.open(path))
+    logo = Label(window, image = img3)
+    logo.place(x=10,y=10)
     window.mainloop()
